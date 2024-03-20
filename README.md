@@ -21,11 +21,6 @@ This is a simple quiz application built using SwiftUI. It allows users to take q
 3. Answer the multiple-choice questions by selecting an option.
 4. After answering all questions, users can see their final score.
 
-## Requirements
-
-- Xcode 12.0 or later
-- iOS 14.0 or later
-- Swift 5.3 or later
 
 ## Dependencies
 
