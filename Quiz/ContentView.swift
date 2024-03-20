@@ -2,23 +2,39 @@
 //  ContentView.swift
 //  Quiz
 //
-//  Created by Yashwant Singh on 20/03/24.
+//  Created by Sameer Shaik on 20/03/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State var score = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            VStack(spacing : 30) {
+                Text("Test Your Brain !!")
+                    .font(.title)
+                    .bold()
+                Text("last Score :\(self.score) / \(myQuiz.count)")
+                    .onAppear(){
+                        self.score = loadScore(quiz: "myQuiz")
+                    }                
+                NavigationLink(destination: QuizMain()){
+                    Text("Start")
+                        .font(.headline)
+                        .font(.callout)
+                    
+                }
+                
+                
+            }
         }
-        .padding()
+        .navigationBarTitle("Home", displayMode: .automatic)
     }
 }
 
 #Preview {
-    ContentView()
+    NavigationView {
+        ContentView()
+    }
 }
